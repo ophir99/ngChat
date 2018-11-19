@@ -1,0 +1,21 @@
+<div class="flx fdc fw main">
+  <div class="flx  fw main"><h2>Members</h2></div>
+  <div class="flx fdr fw">
+    <mat-card *ngFor="let x of usersList">
+      <mat-card-content>
+        <div class="flx fdc">
+          <h3>{{ x.email }}</h3>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="inviteToChat(x._id, x.email)"
+            *ngIf="x._id !== user"
+            (click)="takeToRoom(x._id)"
+          >
+            Invite to chat
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

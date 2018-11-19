@@ -1,0 +1,122 @@
+<div class="wrap">
+  <div class="cardx">
+    <table [formGroup]="loginForm" *ngIf="activeTab == 'login'">
+      <tr>
+        <td>
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              formControlName="email"
+              placeholder="Email"
+              (keyup.enter)="submit()"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              formControlName="password"
+              placeholder="Password"
+              (keyup.enter)="submit()"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td class="txt-center">
+          <button mat-raised-button color="primary" (click)="submit()">
+            Login
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <button mat-stroked-button (click)="activeTab = 'createAccount'">
+            Create your account
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <table [formGroup]="signupForm" *ngIf="activeTab == 'createAccount'">
+      <tr>
+        <td>
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              formControlName="email"
+              placeholder="Email"
+              (keyup.enter)="register()"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              formControlName="password"
+              placeholder="Password"
+              (keyup.enter)="register()"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              formControlName="confirmPassword"
+              placeholder="Confirm password"
+              (keyup.enter)="register()"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td class="txt-center">
+          <button mat-raised-button color="primary" (click)="register()">
+            Sign up
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>
+          <button mat-stroked-button (click)="activeTab = 'login'">
+            Already have an account??
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spinner" *ngIf="showSpinner">
+      <mat-progress-spinner
+        [diameter]="40"
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+      >
+      </mat-progress-spinner>
+      <p>{{ msg }}...</p>
+    </div>
+  </div>
+</div>

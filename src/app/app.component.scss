@@ -1,0 +1,18 @@
+.shell {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  display: grid;
+}
+.shell > * {
+  display: flex;
+}
+app-footer {
+  width: 100%;
+}
+.shell-y {
+  grid-template-rows: 50px calc(100% - 50px);
+}
+.shell-x {
+  grid-template-rows: 100%;
+}

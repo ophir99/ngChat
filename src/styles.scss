@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.shell div > router-outlet + * {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+}
+
+.txt-center {
+  text-align: center;
+}
+.flx-g-1 {
+  flex-grow: 1;
+}
+.flx-g-2 {
+  flex-grow: 2;
+}
+.flx-g-3 {
+  flex-grow: 3;
+}
+.fdc {
+  flex-direction: column;
+}
+.fdr {
+  flex-direction: row;
+}
+.flx {
+  display: flex;
+}
+.w-100 {
+  width: 100%;
+}
+.aic {
+  align-items: center;
+}
+.jcc {
+  justify-content: center;
+}
+.fw {
+  flex-wrap: wrap;
+}

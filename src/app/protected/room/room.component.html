@@ -1,0 +1,35 @@
+<div class="flx fdc flx-g-1">
+  <ul class="flx fdc" #wall>
+    <li class="flx-g-1" *ngFor="let x of messages">
+      <div class="flx fdc flx-g-1">
+        <p [class.self]="x.createdBy === user">{{ x.text }}</p>
+      </div>
+      <div class="cby" *ngIf="x.createdBy !== user">{{ x.createdBy }}</div>
+    </li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <div [formGroup]="postForm" class="input">
+    <div><app-dashboard></app-dashboard></div>
+    <mat-card *ngIf="room" class="flx aic">
+      <mat-form-field>
+        <textarea
+          matInput
+          placeholder="Write something.."
+          formControlName="post"
+          name=""
+          id=""
+        ></textarea>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        [disabled]="!postForm.get('post').value?.length"
+        color="primary"
+        (click)="post()"
+      >
+        Send
+      </button>
+    </mat-card>
+  </div>
+</div>

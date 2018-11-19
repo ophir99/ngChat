@@ -1,0 +1,23 @@
+<div class="canvas">
+  <div class="users flx ">
+    <ul class="flx fdr">
+      <li
+        (click)="logout()"
+        matTooltip="Logout"
+        [matTooltipPosition]="'above'"
+        class="logout"
+      >
+        <i class="far fa-stop-circle"></i>
+      </li>
+      <li
+        *ngFor="let x of users"
+        [class.active]="x.isLogged"
+        (click)="selectedTo(x._id, x.email)"
+        matTooltip="{{x.email}}"
+        [matTooltipPosition]="'above'"
+      >
+        <a>{{ x.email[0] | uppercase }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
